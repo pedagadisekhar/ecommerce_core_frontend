@@ -1,0 +1,121 @@
+.cards-section {
+    padding: 4rem 8%; /* Adjust padding as needed */
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem; /* Space between cards */
+}
+
+.card {
+    background: #9ce9be; /* Background color of card */
+    border-radius: 19px; /* Rounded corners */
+    box-shadow: var(--box-shadow); /* Shadow */
+    overflow: hidden;
+    width: calc(25% - 2rem); /* Adjust width as needed */
+    margin: 1rem 0; /* Margin */
+}
+
+.card-image {
+    height: 200px; /* Adjust image height */
+    background-size: cover;
+    background-position: center;
+    
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.price {
+    font-weight: bold;
+}
+.SHORTS{
+	height: 00px;
+	width: 250px;
+}
+
+.content{
+    margin-left: 700px;
+}
+button:hover {
+    background-color: darken(var(--primary-color), 10%); /* Darken on hover */
+}
+/* About Image Container */
+.about-image {
+    display: flex;
+    flex-direction: column; /* Stack images vertically */
+    align-items: center; /* Center the first image */
+    gap: 0; /* Remove any gap between the images */
+    max-width: 100%; /* Ensure the container does not exceed its parent's width */
+  }
+  
+  /* Style for the first image */
+  .about-img1 {
+    width: 50%; /* Half the original size */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px 8px 0 0; /* Rounded top corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for depth */
+  }
+  
+  /* Style for the second image */
+  .about-img {
+    width: 40%; /* Smaller width than the first image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 0 0 8px 8px; /* Rounded bottom corners */
+    margin-top: -5px; /* Overlap the first image slightly */
+    margin-left: -25%; /* Move the second image to the left */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for depth */
+  }
+  
+/* Search Form */
+.search-form {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Input Field */
+.search-input {
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 4px 0 0 4px;
+    border: 2px solid #ccc;
+    width: 300px;
+    outline: none;
+    height: 44px; /* Set height to match the button */
+}
+
+/* Search Button */
+.search-btn {
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #333;
+    color: white;
+    border: 2px solid #fff;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    height: 44px; /* Set the same height as input */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-btn i {
+    margin-right: 8px; /* Space between the icon and text */
+    font-size: 18px; /* Adjust the icon size */
+}
+
+/* Hover effect for the search button */
+.search-btn:hover {
+    background-color: #555; /* Lighter shade on hover */
+    border-color: #fff;
+}

@@ -1,0 +1,101 @@
+/* Reset some default browser styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+/* Container with background image */
+.signin-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+/* Style the form box */
+.signin-box {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 350px;
+  text-align: center;
+}
+
+/* Header styling */
+.signin-box h2 {
+  margin-bottom: 1.5rem;
+  color: #111;
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+/* Form styling */
+.signin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.signin-form input {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.signin-form input:focus {
+  border-color: #f0c14b; /* Amazon yellow */
+  outline: none;
+}
+
+/* Submit button styling */
+.signin-button {
+  background-color: #f0c14b; /* Amazon yellow */
+  border: 1px solid #a88734;
+  color: #111;
+  padding: 0.75rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.signin-button:hover {
+  background-color: #f8da13d4;
+}
+
+/* Forgot Password link styling */
+.forgot-password-link {
+  margin: 1.5rem 0;
+}
+
+.forgot-password-link a {
+  color: #007185; /* Amazon blue */
+  text-decoration: none;
+}
+
+.forgot-password-link a:hover {
+  text-decoration: underline;
+}
+
+/* Sign Up link styling */
+.signup-link {
+  margin-top: 1rem;
+}
+
+.signup-link a {
+  color: #007185; /* Amazon blue */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}

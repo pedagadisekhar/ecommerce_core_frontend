@@ -1,0 +1,94 @@
+.payment-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .payment-page h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .payment-page .order-summary {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .payment-page .order-summary h2,
+  .payment-page .order-summary h3 {
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .payment-page .order-summary p,
+  .payment-page .order-summary li {
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
+  .payment-page ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .payment-page li {
+    margin-bottom: 10px;
+  }
+  
+  .payment-page li::before {
+    content: "• ";
+    color: #007bff;
+    font-weight: bold;
+  }
+  
+  .payment-page .payment-options {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .payment-page .payment-options h2 {
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .payment-page .payment-options label {
+    display: block;
+    margin-bottom: 10px;
+    color: #555;
+  }
+  
+  .payment-page .payment-options input[type="radio"] {
+    margin-right: 10px;
+  }
+  
+  .payment-page button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .payment-page button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .payment-page button:hover:not(:disabled) {
+    background-color: #0056b3;
+  }
+  

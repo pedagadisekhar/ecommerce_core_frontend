@@ -1,0 +1,117 @@
+/* trending.css */
+.trending-products {
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+.products-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.product-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 280px; /* Adjusted width */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.image-container {
+  width: 100%;
+  height: 300px; /* Increase the height as needed */
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the container without distortion */
+  transition: transform 0.3s ease;
+}
+
+.image-container img:hover {
+  transform: scale(1.1); /* Optional: zoom effect on hover */
+}
+
+.product-info {
+  padding: 15px;
+  text-align: center;
+}
+
+.product-info h3 {
+  font-size: 18px;
+  margin: 10px 0;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+.product-price {
+  font-size: 16px;
+  margin: 5px 0;
+  color: #e91e63;
+  font-weight: bold;
+}
+
+.product-description {
+  font-size: 14px;
+  color: #666;
+  margin: 10px 0;
+}
+
+.add-to-cart-button {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart-button:hover {
+  background-color: #000;
+}
+
+.love-button {
+  background: none; /* Remove background */
+  border: none; /* Remove border */
+  color: #e91e63;
+  font-size: 24px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.love-button.liked {
+  color: #f50057; /* Red color for filled heart */
+}
+
+.love-button:hover {
+  color: #c51162;
+}
+
+.wish-list-icon {
+  color: #fff; /* Initial white color */
+  font-size: 24px;
+  transition: color 0.3s ease;
+}
+
+.wish-list-icon.liked {
+  color: #f50057; /* Red color when the product is in the wish list */
+}
