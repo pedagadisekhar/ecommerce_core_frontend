@@ -12,7 +12,7 @@ import BASE_URL from '../../config';
 import aboutImage from '../../assets/images/about.jpg';
 // import aboutImage1 from '../../assets/images/about-1.jpeg';
 
-const Homepage = ()=>{
+const Allproduct = ()=>{
    
   const [data, setData] = useState(null);
   const [data1, setData1] = useState(null);
@@ -87,4 +87,4 @@ const Homepage = ()=>{
     </div>
   );
 }
-export default Homepage
+export default Allproduct

@@ -23,6 +23,7 @@ function Signin() {
           axios.post(`${BASE_URL}/api/signin`, {
             email: email,
             Password: Password
+            
         }).then((res) => {
             console.log(res);
             if (res.data.message === "Success") {
