@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './signup.css';  // Import the new CSS file
 import Header from '../header/header';
-
 import SimpleFooter from '../Footers/SimpleFooters';
-
+import BASE_URL from '../../config';
 
 const OtpSignup = () => {
     const [signupData, setSignupData] = useState({
@@ -37,7 +36,7 @@ const OtpSignup = () => {
     const handleSignupSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://ec2-3-225-106-91.compute-1.amazonaws.com:8080/api/otpsignup', signupData);
+            const response = await axios.post(`${BASE_URL}/api/otpsignup`, signupData);
             console.log(response.data);
             setStep(2);
         } catch (error) {
@@ -48,7 +47,7 @@ const OtpSignup = () => {
     const handleOtpSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://ec2-3-225-106-91.compute-1.amazonaws.com:8080/api/verifyOtp', otpData);
+            const response = await axios.post(`${BASE_URL}/api/verifyOtp`, otpData);
             console.log(response.data);
             setErrorMessage('OTP verified successfully!');
         } catch (error) {

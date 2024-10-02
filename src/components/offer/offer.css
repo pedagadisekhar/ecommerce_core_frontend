@@ -62,3 +62,63 @@
         transform: translateX(-100%);
     }
 }
+
+
+
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .sales-banner {
+        padding: 15px;
+        max-width: 100%; /* Take full width on smaller screens */
+        margin-left: 28px;
+    }
+    
+    /* Offer heading */
+    .offer-text h1 {
+        font-size: 20px; /* Decrease font size for mobile */
+    }
+    
+    /* Discount text */
+    .discount-text p {
+        font-size: 16px; /* Decrease font size for mobile */
+    }
+    
+    /* Static container for scrolling text */
+    .fafaa {
+        font-size: 14px; /* Smaller text on mobile */
+        padding: 8px 0;
+    }
+
+    .fafaa span {
+        padding: 0 30px; /* Reduce padding on mobile */
+    }
+}
+
+/* Small Mobile Screens (Max-width: 480px) */
+@media (max-width: 480px) {
+    .sales-banner {
+        padding: 10px;
+        max-width: 100%;
+    }
+    
+    /* Offer heading */
+    .offer-text h1 {
+        font-size: 18px; /* Further reduce font size for small mobile screens */
+    }
+    
+    /* Discount text */
+    .discount-text p {
+        font-size: 14px;
+    }
+    
+    /* Static container for scrolling text */
+    .fafaa {
+        font-size: 12px; /* Even smaller text on small mobile */
+        padding: 5px 0;
+    }
+
+    .fafaa span {
+        padding: 0 20px;
+    }
+}

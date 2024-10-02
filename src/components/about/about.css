@@ -85,7 +85,7 @@
 		background-position: center center; /* Image will stay in the center of the screen */
 		background-repeat: no-repeat; /* Prevent image from repeating */
 		background-attachment: scroll; /* Ensure image scrolls with content */
-		width: 109%;
+		width: 112.5%;
 	}
 	
 	.custom-about-content{
