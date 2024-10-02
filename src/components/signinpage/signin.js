@@ -7,6 +7,11 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import BASE_URL from '../../config';
 import backgroundImage from '../../assets/images/home-4.jpg';
+import { ToastContainer, toast } from 'react-toastify';
+import SimpleFooter from '../Footers/SimpleFooters';
+import Header from '../header/header';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function Signin() {
@@ -29,7 +34,20 @@ function Signin() {
             if (res.data.message === "Success") {
                  window.localStorage.setItem("token", res.data.token)
                 window.localStorage.setItem("UserId", res.data.UserId)
-                alert("signin Sucessull!")
+              //  alert("signin Sucessull!")
+                //  toast.success("signin Sucessull!");
+              
+                toast.success("Signin successful!", {
+                  position: "top-right",    // You can set other positions like "bottom-left", etc.
+                  autoClose: 10000,          // Toast will auto-close after 5 seconds
+                  hideProgressBar: false,
+                  closeOnClick: true,
+                  pauseOnHover: true,
+                  draggable: true,
+                  progress: undefined,
+              });
+
+
                 console.log(email);
                 navigate("/homePage");
 
@@ -50,7 +68,6 @@ function Signin() {
 
     }
     return (
-
         <>
         <div 
       className="signin-container"
@@ -82,11 +99,12 @@ function Signin() {
             required
           />
           <button type="submit" className="signin-button">Sign In</button>
+          <ToastContainer />
         </form>
 
         {/* Forgot Password link */}
         <p className="forgot-password-link">
-          <Link to="/forgot-password">Forgot Password?</Link>
+          <Link to="/forget">Forgot Password?</Link>
         </p>
 
         <p className="signup-link">
@@ -94,8 +112,12 @@ function Signin() {
         </p>
       </div>
     </div>
+    
+
+    <ToastContainer />
       </>
     )
+
 
 }
 

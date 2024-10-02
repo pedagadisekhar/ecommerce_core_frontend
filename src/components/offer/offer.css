@@ -1,0 +1,64 @@
+/* Full-width container for the sales banner */
+.sales-banner {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 0;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: 'Georgia', serif;
+}
+
+/* Offer heading */
+.offer-text h1 {
+    color: #003366;
+    font-size: 24px;
+    margin: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Discount text */
+.discount-text p {
+    color: #333;
+    font-size: 18px;
+    margin: 10px 0;
+    font-style: italic;
+}
+
+/* Static container for scrolling text */
+.fafaa {
+    display: flex;
+    overflow: hidden; /* Hide text that overflows outside the box */
+    white-space: nowrap;
+    font-size: 16px;
+    color: #666;
+    background-color: #f5f5f5;
+    padding: 10px 0;
+    margin-top: 20px;
+    max-width: 1200px; /* Box width */
+    margin: 20px auto; /* Center the box */
+    border: 1px solid #ddd; /* Border for the box */
+    box-sizing: border-box;
+}
+
+/* Scrolling text */
+.fafaa span {
+    padding: 0 50px;
+    display: inline-block;
+    white-space: nowrap;
+    animation: scroll-text 10s linear infinite; /* Text scroll animation */
+}
+
+/* Keyframes for scrolling text animation */
+@keyframes scroll-text {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}

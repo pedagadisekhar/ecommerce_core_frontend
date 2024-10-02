@@ -1,22 +1,41 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './trending.css';
-import shirts from '../../assets/images/shirts.jpg';
-import download from '../../assets/images/download.jpeg';
-import tens from '../../assets/images/tens.jpeg';
-import shorts from '../../assets/images/shorts.jpeg';
 import { FaHeart } from 'react-icons/fa';
-
-// Define products array
-const products = [
-  { id: 1, name: 'SHIRTS', price: '$29.99', imageUrl: shirts, description: 'Good product' },
-  { id: 2, name: 'HODDIES', price: '$39.99', imageUrl: download, description: 'Good product' },
-  { id: 3, name: 'UNI-SEX TEES', price: '$49.99', imageUrl: tens, description: 'Good product' },
-  { id: 4, name: 'SHORTS', price: '$59.99', imageUrl: shorts, description: 'Good product' },
-];
+import BASE_URL from '../../config';
 
 const TrendingProducts = () => {
-  // State for wish list products
+  // State for trending products and wish list
+  const [products, setProducts] = useState([]);
   const [wishList, setWishList] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  // Fetch trending products from API when the component mounts
+  useEffect(() => {
+    const fetchTrendingProducts = async () => {
+      try {
+        const response = await fetch('https://ec2-3-225-106-91.compute-1.amazonaws.com:8080/api/getTrendingProducts');
+        if (!response.ok) {
+
+          throw new Error('Failed to fetch products');
+        }
+
+      
+       
+       
+        const data = await response.json();
+       console.log(data[0])
+       
+       
+        setProducts(data[0]); // Assuming the API returns an array of products
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchTrendingProducts();
+  }, []);
 
   // Add or remove product from wish list
   const toggleWishList = (productId) => {
@@ -27,31 +46,37 @@ const TrendingProducts = () => {
     );
   };
 
+  // Display loading or error message if applicable
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+
+  if (error) {
+    return <p>Error: {error}</p>;
+  }
+
   return (
     <div className="trending-products">
       <h2>Trending Products</h2>
-      <div className="products-container">
+      <div className="trending-products-container">
         {products.map((product) => (
-          <div key={product.id} className="product-card">
-            <div className="image-container">
-              <img src={product.imageUrl} alt={product.name} />
+          <div key={product.id} className="trending-product-card">
+            <div className="trending-image-container">
+              <img src={`${BASE_URL}/${product.imageUrl}`} alt={product.name} />
             </div>
-            <div className="product-info">
-              <h3>{product.name}</h3>
-              <p className="product-price">{product.price}</p>
-              <p className="product-description">{product.description}</p>
+            <div className="trending-product-info">
+              <h3>{product.ProductName}</h3>
+              <p className="trending-product-price">{product.price}</p>
               <button
-                className="add-to-cart-button"
+                className="trending-add-to-cart-button"
                 onClick={() => toggleWishList(product.id)}
               >
                 {wishList.includes(product.id) ? (
-                  <FaHeart className="wish-list-icon liked" />
+                  <FaHeart className="trending-wish-list-icon liked" />
                 ) : (
-                  <FaHeart className="wish-list-icon" />
+                  <FaHeart className="trending-wish-list-icon" />
                 )}
-                {wishList.includes(product.id) ? '' : ''}
               </button>
-             
             </div>
           </div>
         ))}

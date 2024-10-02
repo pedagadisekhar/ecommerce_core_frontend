@@ -5,6 +5,8 @@ import axios from 'axios';
 import Header from '../header/header';
 import SimpleFooter from '../Footers/SimpleFooters';
 import './productdetail.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import aboutImage1 from '../../assets/images/about-1.jpeg';
 import { height } from '@fortawesome/free-solid-svg-icons/fa0';
 
@@ -68,6 +70,8 @@ const ProductDetail = () => {
 
       if (response.status === 200) {
         console.log(`Product ${productId} added to cart`);
+        alert("your product added succesfully to the cart")
+
       } else {
         console.error('Failed to add product to cart');
       }
@@ -91,6 +95,8 @@ const ProductDetail = () => {
         {
           productId,
           userId,
+          quantity,
+          size: selectedSize
         },
         {
           headers: {
@@ -101,6 +107,7 @@ const ProductDetail = () => {
 
       if (response.status === 200) {
         console.log(`Product ${productId} added to wishlist`);
+        alert('your product added succesfully to the cart')
       } else {
         console.error('Failed to add product to wishlist');
       }
@@ -135,6 +142,7 @@ const ProductDetail = () => {
 
   
   <div className="product-info">
+    <h1>TEENS FASHION</h1>
     <h2>{product.ProductName}</h2>
     <p>{product.description}</p>
     <p><strong>Category:</strong> Shirt</p>

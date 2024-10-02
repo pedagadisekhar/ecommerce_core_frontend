@@ -1,94 +1,279 @@
+/* payment.css */
+
+/* General Styles */
 .payment-page {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+}
+
+/* Title Styles */
+.payment-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #ecf0f1;
+  padding-bottom: 10px;
+}
+
+/* Order Summary Styles */
+.order-summary h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #34495e;
+  margin-bottom: 20px;
+}
+
+.order-summary p {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #7f8c8d;
+  margin-bottom: 10px;
+}
+
+.order-summary strong {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.order-summary .final-total {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #e74c3c;
+  margin-top: 15px;
+}
+
+/* Item List Styles */
+.item-list {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.item-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.item-name {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.item-details {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.item-quantity {
+  font-size: 1rem;
+  color: #7f8c8d;
+}
+
+.item-price {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #e67e22;
+}
+
+/* Address Details Styles */
+.address-details {
+  background-color: #ecf0f1;
+  padding: 15px;
+  border-radius: 8px;
+  line-height: 1.6;
+  font-size: 1rem;
+  margin-bottom: 30px;
+  color: #34495e;
+}
+
+.no-address {
+  font-size: 1rem;
+  color: #e74c3c;
+}
+
+/* Payment Options Styles */
+.payment-options {
+  margin-bottom: 30px;
+}
+
+.payment-options h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #34495e;
+  font-weight: 600;
+}
+
+.payment-label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #ecf0f1;
+  transition: background-color 0.2s ease;
+}
+
+.payment-label:hover {
+  background-color: #d0d7de;
+}
+
+.payment-label input {
+  margin-right: 10px;
+  accent-color: #e67e22;
+  cursor: pointer;
+}
+
+/* Submit Payment Button Styles */
+.submit-payment-button {
+  width: 100%;
+  background-color: #e67e22;
+  color: white;
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-payment-button:hover {
+  background-color: #cf6d17;
+}
+
+.submit-payment-button:active {
+  transform: scale(0.98);
+}
+
+/* Modal Styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.modal-content h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.modal-content p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  color: #7f8c8d;
+}
+
+.modal-content button {
+  padding: 10px 20px;
+  background-color: #e67e22;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modal-content button:hover {
+  background-color: #cf6d17;
+}
+
+.order-total {
+  display: flex;
+  flex-direction: column; /* Column layout for mobile */
+  gap: 0.5rem; /* Space between each row */
+  margin-bottom: 1.5rem;
+}
+
+.order-total p {
+  display: flex;
+  justify-content: space-between; /* Spread out label and value */
+  align-items: center;
+  font-size: 1.1rem; /* Font size for readability */
+  margin: 0; /* Remove default margins */
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #ddd; /* Add a subtle border */
+}
+
+.order-total .label {
+  font-weight: 500;
+  color: #333; /* Text color for labels */
+}
+
+.order-total .value {
+  font-weight: 600;
+  color: #232f3e; /* Dark color for values */
+}
+
+.order-total .final-total {
+  color: #ff9900; /* Highlight final total with a different color */
+  font-size: 1.2rem; /* Make the final total slightly bigger */
+}
+
+
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .payment-page {
+    padding: 15px;
   }
-  
-  .payment-page h1 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 20px;
+
+  .payment-title {
+    font-size: 1.8rem;
   }
-  
-  .payment-page .order-summary {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  .order-summary h2,
+  .payment-options h2 {
+    font-size: 1.4rem;
   }
-  
-  .payment-page .order-summary h2,
-  .payment-page .order-summary h3 {
-    color: #333;
-    margin-bottom: 15px;
+
+  .item-list li {
+    flex-direction: column;
+    align-items: flex-start;
   }
-  
-  .payment-page .order-summary p,
-  .payment-page .order-summary li {
-    color: #555;
-    margin-bottom: 10px;
+
+  .item-details {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
   }
-  
-  .payment-page ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .payment-page li {
-    margin-bottom: 10px;
-  }
-  
-  .payment-page li::before {
-    content: "• ";
-    color: #007bff;
-    font-weight: bold;
-  }
-  
-  .payment-page .payment-options {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .payment-page .payment-options h2 {
-    color: #333;
-    margin-bottom: 15px;
-  }
-  
-  .payment-page .payment-options label {
-    display: block;
-    margin-bottom: 10px;
-    color: #555;
-  }
-  
-  .payment-page .payment-options input[type="radio"] {
-    margin-right: 10px;
-  }
-  
-  .payment-page button {
-    width: 100%;
+
+  .submit-payment-button {
+    font-size: 1rem;
     padding: 12px;
-    background-color: #007bff;
-    color: #fff;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
   }
-  
-  .payment-page button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-  }
-  
-  .payment-page button:hover:not(:disabled) {
-    background-color: #0056b3;
-  }
-  
+}

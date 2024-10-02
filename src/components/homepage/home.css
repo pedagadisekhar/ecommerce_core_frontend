@@ -1,121 +1,169 @@
-.cards-section {
-    padding: 4rem 8%; /* Adjust padding as needed */
-}
-
-.card-container {
+/* Overall section for landing page */
+.home-section {
+    position: relative;
+    color: #060606;
+    text-align: center;
+    padding: 60px 15px; /* Adjusted padding for smaller screens */
+    background: url('../../assets/images/home-4.jpg') no-repeat center center/cover;
+    background-attachment: fixed; /* This creates a parallax scrolling effect */
+    height: 600px; /* Adjusted height for smaller screens */
+    width: 100%;
+    box-sizing: border-box;
     display: flex;
-    flex-wrap: wrap;
-    gap: 2rem; /* Space between cards */
-}
-
-.card {
-    background: #9ce9be; /* Background color of card */
-    border-radius: 19px; /* Rounded corners */
-    box-shadow: var(--box-shadow); /* Shadow */
-    overflow: hidden;
-    width: calc(25% - 2rem); /* Adjust width as needed */
-    margin: 1rem 0; /* Margin */
-}
-
-.card-image {
-    height: 200px; /* Adjust image height */
-    background-size: cover;
-    background-position: center;
-    
-}
-
-.card-content {
-    padding: 1.5rem;
-}
-
-.card-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 0;
-}
-
-.price {
-    font-weight: bold;
-}
-.SHORTS{
-	height: 00px;
-	width: 250px;
-}
-
-.content{
-    margin-left: 700px;
-}
-button:hover {
-    background-color: darken(var(--primary-color), 10%); /* Darken on hover */
-}
-/* About Image Container */
-.about-image {
-    display: flex;
-    flex-direction: column; /* Stack images vertically */
-    align-items: center; /* Center the first image */
-    gap: 0; /* Remove any gap between the images */
-    max-width: 100%; /* Ensure the container does not exceed its parent's width */
-  }
-  
-  /* Style for the first image */
-  .about-img1 {
-    width: 50%; /* Half the original size */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 8px 8px 0 0; /* Rounded top corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for depth */
-  }
-  
-  /* Style for the second image */
-  .about-img {
-    width: 40%; /* Smaller width than the first image */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 0 0 8px 8px; /* Rounded bottom corners */
-    margin-top: -5px; /* Overlap the first image slightly */
-    margin-left: -25%; /* Move the second image to the left */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for depth */
-  }
-  
-/* Search Form */
-.search-form {
-    display: flex;
-    align-items: center;
-    margin-top: 20px;
-}
-
-/* Input Field */
-.search-input {
-    padding: 12px;
-    font-size: 16px;
-    border-radius: 4px 0 0 4px;
-    border: 2px solid #ccc;
-    width: 300px;
-    outline: none;
-    height: 44px; /* Set height to match the button */
-}
-
-/* Search Button */
-.search-btn {
-    padding: 10px 15px;
-    font-size: 16px;
-    background-color: #333;
-    color: white;
-    border: 2px solid #fff;
-    border-radius: 0 4px 4px 0;
-    cursor: pointer;
-    height: 44px; /* Set the same height as input */
-    display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    margin-top: 50px; /* Reduced margin for smaller screens */
+    transition: background 0.3s ease; /* Smooth background transitions */
 }
 
-.search-btn i {
-    margin-right: 8px; /* Space between the icon and text */
-    font-size: 18px; /* Adjust the icon size */
+/* Content within the home section */
+.home-content {
+    max-width: 90%; /* Adjusted width for responsiveness */
+    width: 100%;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+    padding: 15px; /* Reduced padding for smaller screens */
+    border-radius: 10px;
 }
 
-/* Hover effect for the search button */
+.home-content h3 {
+    font-size: 28px; /* Adjusted font size for smaller screens */
+    font-weight: bold;
+    margin: 15px 0; /* Reduced margin for smaller screens */
+    text-transform: uppercase;
+}
+
+.home-content p {
+    font-size: 16px; /* Adjusted font size for smaller screens */
+    margin: 10px 0;
+    line-height: 1.5;
+}
+
+/* Background transition effects (for switching images) */
+@keyframes backgroundSwitch {
+    0% {
+        background-image: url('../../assets/images/home-11.jpg');
+    }
+    50% {
+        background-image: url('../../assets/images/home-9.jpg'); /* Another image */
+    }
+    100% {
+        background-image: url('../../assets/images/home-10.jpg'); /* Back to original */
+    }
+}
+
+/* Add animation to smoothly transition between background images */
+.home-section {
+    animation: backgroundSwitch 15s infinite; /* Change duration for smoother/slower transitions */
+}
+
+/* Search bar styling */
+.search-form {
+    margin-bottom: 15px; /* Reduced margin for smaller screens */
+    display: flex;
+    flex-direction: column; /* Stacked vertically on smaller screens */
+    align-items: center;
+}
+
+.search-input {
+    padding: 10px; /* Reduced padding */
+    font-size: 14px; /* Adjusted font size */
+    width: 90%; /* Full width with a maximum width */
+    max-width: 300px; /* Limit width for larger screens */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px; /* Space between input and button */
+}
+
+.search-btn {
+    padding: 10px 15px; /* Reduced padding */
+    font-size: 14px; /* Adjusted font size */
+    background-color: #febd69;
+    color: #111;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 0; /* Remove margin on smaller screens */
+}
+
 .search-btn:hover {
-    background-color: #555; /* Lighter shade on hover */
-    border-color: #fff;
+    background-color: #f3a847;
+}
+
+/* Button styling */
+.btn {
+    display: inline-block;
+    background-color: #febd69;
+    color: #111;
+    padding: 10px 20px; /* Adjusted padding */
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 14px; /* Adjusted font size */
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 15px; /* Adjusted margin for smaller screens */
+}
+
+.btn:hover {
+    background-color: #f3a847;
+    transform: scale(1.05);
+}
+
+/* Footer section */
+.footer {
+    background-color: #131a22;
+    color: #fff;
+    padding: 15px; /* Reduced padding */
+    text-align: center;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 12px; /* Adjusted font size */
+    color: #ddd;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .home-section {
+        
+        padding: 40px 10px; /* Further adjusted padding */
+        height: 600px; /* Adjusted height for smaller screens */
+        width: 116.7%;
+    }
+
+    .home-content {
+        padding: 10px; /* Further reduced padding */
+    }
+
+    .home-content h3 {
+        font-size: 24px; /* Further adjusted font size */
+    }
+
+    .home-content p {
+        font-size: 14px; /* Further adjusted font size */
+    }
+
+    .search-input, .search-btn {
+        width: 100%; /* Full width on smaller screens */
+        max-width: none; /* Remove maximum width restriction */
+    }
+
+    .search-form {
+        flex-direction: column;
+    }
+
+    .btn {
+        font-size: 14px; /* Further adjusted font size */
+    }
+
+    .footer {
+        padding: 10px; /* Further reduced padding */
+    }
+
+    .footer p {
+        font-size: 12px; /* Further adjusted font size */
+    }
 }

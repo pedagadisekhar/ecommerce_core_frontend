@@ -99,3 +99,52 @@ body, html {
 .signup-link a:hover {
   text-decoration: underline;
 }
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .signin-box {
+    padding: 1.5rem;
+    max-width: 90%;
+  }
+
+  .signin-box h2 {
+    font-size: 1.5rem;
+  }
+
+  .signin-form input {
+    font-size: 0.9rem;
+  }
+
+  .signin-button {
+    font-size: 0.9rem;
+  }
+
+  .forgot-password-link, .signup-link {
+    margin: 1rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .signin-box {
+    padding: 1rem;
+    max-width: 95%;
+  }
+
+  .signin-box h2 {
+    font-size: 1.25rem;
+  }
+
+  .signin-form input {
+    font-size: 0.85rem;
+    padding: 0.5rem;
+  }
+
+  .signin-button {
+    font-size: 0.85rem;
+    padding: 0.5rem;
+  }
+
+  .forgot-password-link, .signup-link {
+    margin: 0.5rem 0;
+  }
+}

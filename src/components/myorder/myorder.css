@@ -1,0 +1,86 @@
+/* myorder.css */
+.my-orders-app {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  color: #333;
+}
+
+/* Header styling */
+.my-orders-header {
+  font-size: 24px; /* Adjusted font size for mobile */
+  margin-bottom: 15px; /* Reduced margin */
+  text-align: center;
+  color: #444;
+}
+
+/* Orders list styling */
+.my-orders-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Individual order item styling */
+.my-orders-list-item {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px; /* Reduced padding for mobile */
+  margin-bottom: 15px; /* Reduced margin */
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+}
+
+/* Image container styling */
+.my-orders-image-container {
+  flex-shrink: 0;
+  margin-right: 15px; /* Reduced margin for mobile */
+}
+
+/* Image styling */
+.my-orders-image {
+  width: 80px; /* Adjusted size for mobile */
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Order details styling */
+.my-orders-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.my-orders-details p {
+  margin: 5px 0;
+  font-size: 14px; /* Adjusted font size for mobile */
+}
+
+/* No data message styling */
+.my-orders-no-data {
+  text-align: center;
+  font-size: 16px; /* Adjusted font size for mobile */
+  color: #888;
+}
+
+/* Responsive styling for mobile devices */
+@media (max-width: 600px) {
+  .my-orders-list-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .my-orders-image {
+    margin-bottom: 10px; /* Adjusted margin for mobile */
+  }
+
+  .my-orders-header {
+    font-size: 22px; /* Further adjusted font size */
+    margin-bottom: 10px; /* Reduced margin for mobile */
+  }
+
+  .my-orders-details p {
+    font-size: 14px; /* Maintain adjusted font size for mobile */
+  }
+}
