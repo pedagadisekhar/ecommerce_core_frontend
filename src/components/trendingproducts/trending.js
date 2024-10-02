@@ -14,7 +14,7 @@ const TrendingProducts = () => {
   useEffect(() => {
     const fetchTrendingProducts = async () => {
       try {
-        const response = await fetch('https://ec2-3-225-106-91.compute-1.amazonaws.com:8080/api/getTrendingProducts');
+        const response = await fetch('http://ec2-3-225-106-91.compute-1.amazonaws.com:8080/api/getTrendingProducts');
         if (!response.ok) {
 
           throw new Error('Failed to fetch products');
