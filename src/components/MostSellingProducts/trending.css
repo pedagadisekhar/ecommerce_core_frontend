@@ -1,0 +1,185 @@
+/* Overall section styling */
+.trending-products {
+  padding: 20px;
+  background-color: #f7f7f7;
+  font-family: Arial, sans-serif;
+  margin-left: 15px;
+  width: 100%;
+}
+
+/* Grid container for products */
+.trending-products-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns by default */
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Individual product card styling */
+.trending-product-card {
+  background-color: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  text-align: left;
+  transition: transform 0.2s ease-in-out;
+}
+
+.trending-product-card:hover {
+  transform: scale(1.05);
+}
+
+/* Image container styling */
+.trending-image-container img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  border-bottom: 1px solid #e6e6e6;
+  padding-bottom: 10px;
+}
+
+/* Product information section */
+.trending-product-info {
+  padding: 10px 0;
+}
+
+.trending-product-info h3 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #007185;
+  margin-bottom: 8px;
+}
+
+.trending-product-price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #b12704;
+  margin-bottom: 8px;
+}
+
+.trending-product-description {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* Add to cart button styling */
+.trending-add-to-cart-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #eebe4fec;
+  border: 1px solid #faf9f7;
+  color: #111;
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.trending-add-to-cart-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -75%;
+  width: 50%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.4);
+  transform: skewX(-20deg);
+  transition: left 0.5s ease-in-out;
+}
+
+.trending-add-to-cart-button:hover::before {
+  left: 125%;
+}
+
+.trending-add-to-cart-button:hover {
+  background-color: #f5c65d;
+}
+
+
+/* Wishlist heart icon styling */
+.trending-wish-list-icon {
+  color: #888;
+  font-size: 20px;
+  margin-left: 10px;
+  transition: color 0.2s ease-in-out;
+}
+
+.trending-wish-list-icon.liked {
+  color: #f70202;
+}
+
+.trending-wish-list-icon:hover {
+  color: #ff9900;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  /* Adjust grid to 2 columns on tablets and small screens */
+  .trending-products-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .trending-product-info h3 {
+    margin: 6px;
+    font-size: 14px; /* Slightly smaller font for smaller screens */
+  }
+
+  .trending-product-price {
+    margin: 6px;
+    font-size: 16px; /* Adjust font size for mobile */
+  }
+
+  .trending-product-description {
+    margin: 6px;
+    font-size: 12px; /* Smaller text for mobile */
+  }
+
+  .trending-add-to-cart-button {
+    padding: 10px 6px; /* Reduced padding for smaller screens */
+    font-size: 20px; /* Adjust font size */
+  }
+
+  .trending-wish-list-icon {
+    font-size: 18px; /* Adjust icon size */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Adjust grid to 2 columns on mobile devices */
+  .trending-products-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Adjust image height for smaller screens */
+  .trending-image-container img {
+    height: 150px; /* Reduced height for mobile */
+  }
+
+  .trending-product-info h3 {
+    font-size: 12px; /* Smaller font for mobile */
+  }
+
+  .trending-product-price {
+    font-size: 14px; /* Smaller font for mobile */
+  }
+
+  .trending-product-description {
+    font-size: 12px; /* Smaller font for mobile */
+  }
+
+  .trending-add-to-cart-button {
+    font-size: 12px; /* Smaller font for mobile */
+    padding: 5px 8px; /* Smaller padding for mobile */
+  }
+
+  .trending-wish-list-icon {
+    font-size: 16px; /* Smaller icon for mobile */
+  }
+}

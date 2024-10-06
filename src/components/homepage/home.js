@@ -6,6 +6,8 @@ import centerImage from '../../assets/images/center.jpg';
 import centerImage1 from '../../assets/images/center-1.jpg';
 import backgroundImage from '../../assets/images/home-4.jpg';
 import TrendingProducts from "../trendingproducts/trending";
+import MostSellingProducts from "../MostSellingProducts/trending";
+import OfferProducts from "../OfferProducts/trending";
 import SimpleFooter from '../Footers/SimpleFooters';
 import WhatsAppButton from "../whatsapp/whatsapp";
 import SalesAndScrollingText from "../offer/offer";
@@ -59,9 +61,9 @@ const HomePage = () => {
       </section>
       <WhatsAppButton/>
       <TrendingProducts />
-       <TrendingProducts />
+      <MostSellingProducts />
       <SalesAndScrollingText/>
-      <TrendingProducts />
+      <OfferProducts />
       <About />
       <SimpleFooter />
     </>

@@ -4,7 +4,7 @@ import { FaHeart } from 'react-icons/fa';
 import BASE_URL from '../../config';
 import { Link, useLocation } from 'react-router-dom';
 
-const TrendingProducts = () => {
+const OfferProducts = () => {
   // State for trending products and wish list
   const [products, setProducts] = useState([]);
   const [wishList, setWishList] = useState([]);
@@ -54,8 +54,8 @@ const TrendingProducts = () => {
   }
 
   return (
-    <div className="trending-products">
-      <h2>Trending Products</h2>
+    <div className="Offer-Products">
+      <h2>OfferProducts</h2>
       <div className="trending-products-container">
         {products.map((product) => (
           <div key={product.id} className="trending-product-card">
@@ -85,4 +85,4 @@ const TrendingProducts = () => {
   );
 };
 
-export default TrendingProducts;
+export default OfferProducts;
