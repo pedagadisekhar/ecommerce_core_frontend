@@ -6,7 +6,7 @@
     padding: 60px 15px; /* Adjusted padding for smaller screens */
     background: url('../../assets/images/home-4.jpg') no-repeat center center/cover;
     background-attachment: fixed; /* This creates a parallax scrolling effect */
-    height: 600px; /* Adjusted height for smaller screens */
+    height: 650px; /* Adjusted height for smaller screens */
     width: 100%;
     box-sizing: border-box;
     display: flex;

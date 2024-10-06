@@ -107,7 +107,7 @@ const SimpleFooter = () => {
     </li>
     </ul>
 
-              <p>&copy;2024 hemaprasad_webDevelopment | All Rights Reserved</p>
+              <p>&copy;2024 MultiStacks_webDevelopment | All Rights Reserved</p>
               <p>Got it! Here’s some content that you might find useful for a teen fashion website:
 
 ### Home Page

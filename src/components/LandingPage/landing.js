@@ -61,8 +61,9 @@ const HomePage = () => {
       </section>
       <WhatsAppButton/>
       <TrendingProducts />
-       <MostSellingProducts />
       <SalesAndScrollingText/>
+      <MostSellingProducts />
+     
       <OfferProducts />
       <About />
       <SimpleFooter />

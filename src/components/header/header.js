@@ -108,6 +108,7 @@ function Header() {
         </Link>
         <Link to='/wishlist' style={{ textDecoration: 'none' }}>
 
+
         <div className="custom-icon wishlist-icon">
           <FontAwesomeIcon icon={faHeart} />
           <span className="wishlist-count">{wishlistCount}</span>

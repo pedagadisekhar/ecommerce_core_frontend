@@ -54,7 +54,7 @@ const OfferProducts = () => {
   }
 
   return (
-    <div className="Offer-Products">
+    <div className="trending-products">
       <h2>OfferProducts</h2>
       <div className="trending-products-container">
         {products.map((product) => (
