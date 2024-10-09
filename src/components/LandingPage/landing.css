@@ -131,7 +131,7 @@
         
         padding: 40px 10px; /* Further adjusted padding */
         height: 600px; /* Adjusted height for smaller screens */
-        width: 114%;
+        width: 100%;
     }
 
     .home-content {

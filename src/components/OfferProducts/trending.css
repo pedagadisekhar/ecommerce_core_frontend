@@ -157,10 +157,15 @@
 
 @media (max-width: 480px) {
   /* Adjust grid to 2 columns on mobile devices */
-  .trending-products {
+  /* .trending-products {
 
     margin-left: 20px;
+  } */
+  .trending-products{
+    margin-left: -1.5px;
+
   }
+
   .trending-products-container {
     grid-template-columns: repeat(2, 1fr);
   }

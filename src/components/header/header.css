@@ -157,6 +157,7 @@
 	  align-items: center;
 	  justify-content: flex-end;
 	  gap: 20px; /* Add some spacing between the icons */
+	  margin-left: 10px;
 	}
   
 	.custom-icon {
@@ -195,7 +196,7 @@
 	  display: flex;
 	  justify-content: space-between;
 	  align-items: center;
-	  width: 114%;
+	  width: 100%;
 	}
   
 	.custom-logo {
@@ -218,7 +219,7 @@
 	  align-items: center;
 	  justify-content: flex-end;
 	  gap: 17px; /* Adjust spacing for smaller screens */
-	  margin-right: 70px;
+	  margin-right: 15px;
 	}
   
 	.custom-icon {

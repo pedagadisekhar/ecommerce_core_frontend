@@ -3,7 +3,7 @@
   padding: 20px;
   background-color: #f7f7f7;
   font-family: Arial, sans-serif;
-  margin-left: 15px;
+  margin-left: 5px;
   width: 100%;
 }
 
@@ -122,6 +122,13 @@
 /* Responsive styling */
 @media (max-width: 768px) {
   /* Adjust grid to 2 columns on tablets and small screens */
+
+  .trending-products{
+    margin-left: -1.5px;
+
+  }
+
+
   .trending-products-container {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -153,6 +160,12 @@
 
 @media (max-width: 480px) {
   /* Adjust grid to 2 columns on mobile devices */
+ 
+  .trending-products{
+    margin-left: 40px;
+ 
+   }
+
   .trending-products-container {
     grid-template-columns: repeat(2, 1fr);
   }
