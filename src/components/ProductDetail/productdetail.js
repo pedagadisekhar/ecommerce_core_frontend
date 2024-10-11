@@ -16,6 +16,8 @@ const ProductDetail = () => {
   const [quantity, setQuantity] = useState(1);
   const [selectedSize, setSelectedSize] = useState("M"); // Default size
   const [isModalOpen, setIsModalOpen] = useState(false); // Modal visibility state
+  const [selectedImage, setSelectedImage] = useState(null);
+
 
   useEffect(() => {
     // Fetch product details
@@ -43,9 +45,10 @@ const ProductDetail = () => {
     setSelectedSize(event.target.value);
   };
 
-  const handleAddToCart = async (productId, quantity) => {
+  const handleAddToCart = async (productId, quantity,inventory) => {
     const token = localStorage.getItem('token');
     const userId = localStorage.getItem('UserId');
+    if(quantity<inventory){
 
     if (!token || !userId) {
       console.error('User is not authenticated');
@@ -78,6 +81,9 @@ const ProductDetail = () => {
     } catch (err) {
       console.error('Error adding product to cart:', err.message);
     }
+  }else{
+    alert("Quantatity Not Avaliable")
+  }
   };
 
   const handleAddToWishlist = async (productId) => {
@@ -119,6 +125,10 @@ const ProductDetail = () => {
   const handleReturnButtonClick = () => {
     setIsModalOpen(true);
   };
+  
+  const handleImageClick = (imageUrl) => {
+    setSelectedImage(imageUrl); // Update the large image
+  };
 
   const closeModal = () => {
     setIsModalOpen(false);
@@ -129,20 +139,38 @@ const ProductDetail = () => {
       <Header />
       <div className="product-detail-container">
   {/* Container for the column of smaller images */}
-  <div className="product-images-column">
-    <img src={`${BASE_URL}/${product.imageUrl}`} alt={product.ProductName} className="small-image" />
-    <img src={`${BASE_URL}/${product.imageUrl}`} alt={product.ProductName} className="small-image" />
-    <img src={`${BASE_URL}/${product.imageUrl}`} alt={product.ProductName} className="small-image" />
-  </div>
+ 
     {/* Container for the large main image */}
-  <div className="product-image-large">
-    <img src={`${BASE_URL}/${product.imageUrl}`} alt={product.ProductName} className="large-image" />
-  </div>
+    {/* Large image container */}
+    <div className="product-image-large">
+          <img src={selectedImage ? selectedImage :`${BASE_URL}/${product.imageUrl}`} alt={product.ProductName} className="large-image" />
+        </div>
 
+        {/* Small images column */}
+        <div className="product-images-column">
+          <img
+            src={`${BASE_URL}/${product.image2}`}
+            alt={product.ProductName}
+            className="small-image"
+            onClick={() => handleImageClick(`${BASE_URL}/${product.image2}`)} // Click event for first image
+          />
+          <img
+            src={`${BASE_URL}/${product.image3}`} // Replace with other images' URLs if available
+            alt={product.ProductName}
+            className="small-image"
+            onClick={() => handleImageClick(`${BASE_URL}/${product.image3}`)} // Click event for second image
+          />
+          <img
+            src={`${BASE_URL}/${product.imageUrl}`} // Replace with other images' URLs if available
+            alt={product.ProductName}
+            className="small-image"
+            onClick={() => handleImageClick(`${BASE_URL}/${product.imageUrl}`)} // Click event for third image
+          />
+        </div>
 
   
   <div className="product-info">
-    <h1>TEENS FASHION</h1>
+  
     <h2>{product.ProductName}</h2>
     <p>{product.description}</p>
     <p><strong>Category:</strong> Shirt</p>
@@ -196,7 +224,7 @@ const ProductDetail = () => {
         <button onClick={increaseQuantity} className="quantity-button">+</button>
       </div>
       <div className="button-container">
-        <button onClick={() => handleAddToCart(product.ProductId, quantity)} className="add-to-cart-button">
+        <button onClick={() => handleAddToCart(product.ProductId, quantity,product.inventory)} className="add-to-cart-button">
           Add to Cart
         </button>
         <button onClick={() => handleAddToWishlist(product.ProductId)} className="wishlist-button">
@@ -226,26 +254,7 @@ const ProductDetail = () => {
   )}
 </div>
 
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
+    
       <SimpleFooter />
     </>
   );

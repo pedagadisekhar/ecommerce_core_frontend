@@ -54,34 +54,40 @@ const TrendingProducts = () => {
   }
 
   return (
-    <div className="trending-products">
-      <h2>Trending Products</h2>
-      <div className="trending-products-container">
-        {products.map((product) => (
-          <div key={product.id} className="trending-product-card">
-            <div className="trending-image-container">
+    <>
+    <div className="amazon-products-section">
+    <h2>Trending Products</h2>
+    <div className="amazon-products-container">
+      {products.map((product) => (
+        <div key={product.id} className="amazon-product-card">
+          <div className="amazon-image-container">
             <Link to={`/product/${product.ProductId}`}>
-              <img src={`${BASE_URL}/${product.imageUrl}`} alt={product.name} />
-              </Link>
-            </div>
-            <div className="trending-product-info">
-              <h3>{product.ProductName}</h3>
-              <p className="trending-product-price">{product.price}</p>
-              <button
-                className="trending-add-to-cart-button"
-                onClick={() => toggleWishList(product.id)}
-              >
-                {wishList.includes(product.id) ? (
-                  <FaHeart className="trending-wish-list-icon liked" />
-                ) : (
-                  <FaHeart className="trending-wish-list-icon" />
-                )}
-              </button>
-            </div>
+              <img src={`${BASE_URL}/${product.imageUrl}`} alt={product.ProductName} />
+            </Link>
           </div>
-        ))}
-      </div>
+          <div className="amazon-product-info">
+            <h3 className="amazon-product-name">{product.ProductName}</h3>
+            <p className="amazon-product-price">{product.price}₹</p>
+            <p className="amazon-product-description">{product.description}</p>
+          </div>
+          <div className="amazon-action-buttons">
+            <button className="amazon-add-to-cart-button">Add to Cart</button>
+            <button
+              className="amazon-wish-list-button"
+              onClick={() => toggleWishList(product.id)}
+            >
+              {wishList.includes(product.id) ? (
+                <FaHeart className="amazon-wish-list-icon liked" />
+              ) : (
+                <FaHeart className="amazon-wish-list-icon" />
+              )}
+            </button>
+          </div>
+        </div>
+      ))}
     </div>
+  </div>
+  </>
   );
 };
 

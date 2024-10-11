@@ -1,198 +1,194 @@
-/* Overall section styling */
-.trending-products {
-  padding: 20px;
-  background-color: #f7f7f7;
-  font-family: Arial, sans-serif;
-  margin-left: 5px;
-  width: 100%;
+/* Overall container for the Allproduct section */
+.amazon-products-section {
+  padding: 40px 20px;
+  background-color: #f8f9fb; /* Soft off-white background */
 }
 
-/* Grid container for products */
-.trending-products-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 columns by default */
-  gap: 20px;
-  max-width: 1200px;
+/* Section title */
+.amazon-products-section h2 {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 50px;
+  text-transform: uppercase; /* Capitalized for a modern look */
+}
+
+/* Grid container for the product cards */
+.amazon-products-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow products to wrap to the next line if the container is full */
+  gap: 20px; /* Space between product cards */
+  max-width: 1400px;
   margin: 0 auto;
+  justify-content: space-between; /* Spread the items evenly across the row */
 }
 
-/* Individual product card styling */
-.trending-product-card {
+/* Individual product card */
+.amazon-product-card {
   background-color: #fff;
-  border: 1px solid #e6e6e6;
-  border-radius: 4px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  padding: 10px;
-  text-align: left;
-  transition: transform 0.2s ease-in-out;
+  border: 1px solid #e1e4e8;
+  border-radius: 12px; /* Softer, rounded corners */
+  overflow: hidden;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 250px; /* Fixed width to keep items in a row */
 }
 
-.trending-product-card:hover {
-  transform: scale(1.05);
+.amazon-product-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Bolder shadow on hover */
+  transform: scale(1.02); /* Slight zoom effect */
 }
 
-/* Image container styling */
-.trending-image-container img {
-  width: 100%;
-  height: 200px;
-  object-fit: contain;
-  border-bottom: 1px solid #e6e6e6;
-  padding-bottom: 10px;
+/* Container for product images */
+.amazon-image-container img {
+  width: 100%; /* Ensure the image covers the full card width */
+  height: auto;
+  object-fit: cover; /* Image covers the full width of the card */
+  padding: 0; /* Removed padding for a cleaner look */
+  background-color: #fff; /* White background for image consistency */
 }
 
 /* Product information section */
-.trending-product-info {
-  padding: 10px 0;
+.amazon-product-info {
+  padding: 20px;
+  text-align: left; /* Aligned text to the left for a modern feel */
+  flex-grow: 1;
 }
 
-.trending-product-info h3 {
-  font-size: 16px;
-  font-weight: 500;
-  color: #007185;
-  margin-bottom: 8px;
-}
-
-.trending-product-price {
+/* Product name styling */
+.amazon-product-name {
   font-size: 18px;
-  font-weight: bold;
-  color: #b12704;
-  margin-bottom: 8px;
-}
-
-.trending-product-description {
-  font-size: 14px;
-  color: #555;
+  font-weight: 700;
+  color: #1a202c; /* Darker shade for modern contrast */
   margin-bottom: 10px;
+  text-transform: none; /* Regular text case */
 }
 
-/* Add to cart button styling */
-.trending-add-to-cart-button {
-  display: inline-flex;
+.amazon-product-name:hover {
+  color: #0066c0; /* Blue color on hover */
+  text-decoration: underline;
+}
+
+/* Product price styling */
+.amazon-product-price {
+  font-size: 20px;
+  font-weight: 600;
+  color: #2a9d8f; /* A fresh green color for pricing */
+  margin-bottom: 15px;
+}
+
+/* Product description */
+.amazon-product-description {
+  width: 100%; /* Ensures it fits within the container */
+  font-size: 14px;
+  color: #6c757d; /* A muted gray color for the description */
+  margin-bottom: 14px;
+  line-height: 1.5; /* Better readability */
+}
+
+/* Add to cart button and wishlist button container */
+.amazon-action-buttons {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 20px;
+  border-top: 1px solid #e1e4e8; /* Divider between product info and buttons */
+}
+
+.amazon-add-to-cart-button {
+  background-color: #007bff; 
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.amazon-add-to-cart-button:hover {
+  background-color: #0056b3; 
+}
+
+
+.amazon-wish-list-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #6c757d;
+  display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #eebe4fec;
-  border: 1px solid #faf9f7;
-  color: #111;
-  padding: 6px 12px;
-  font-size: 14px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
-  position: relative;
-  overflow: hidden;
 }
 
-.trending-add-to-cart-button::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: -75%;
-  width: 50%;
-  height: 200%;
-  background: rgba(255, 255, 255, 0.4);
-  transform: skewX(-20deg);
-  transition: left 0.5s ease-in-out;
+.amazon-wish-list-button:hover {
+  color: #ff6f61; 
 }
 
-.trending-add-to-cart-button:hover::before {
-  left: 125%;
+.amazon-wish-list-icon {
+  font-size: 24px;
+  color: #6c757d;
 }
 
-.trending-add-to-cart-button:hover {
-  background-color: #f5c65d;
+.amazon-wish-list-icon.liked {
+  color: #ff6f61; 
 }
 
-
-/* Wishlist heart icon styling */
-.trending-wish-list-icon {
-  color: #888;
-  font-size: 20px;
-  margin-left: 10px;
-  transition: color 0.2s ease-in-out;
-}
-
-.trending-wish-list-icon.liked {
-  color: #f70202;
-}
-
-.trending-wish-list-icon:hover {
-  color: #ff9900;
-}
-
-/* Responsive styling */
-@media (max-width: 768px) {
-  /* Adjust grid to 2 columns on tablets and small screens */
-
-  .trending-products{
-    margin-left: -1.5px;
-
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+  .amazon-products-container {
+    justify-content: center; /* Center product cards on mobile */
   }
 
-
-  .trending-products-container {
-    grid-template-columns: repeat(2, 1fr);
+  .amazon-product-card {
+    width: 100%; /* Make product card take full width on mobile */
+    max-width: 100%; /* Prevent product card from exceeding container width */
   }
 
-  .trending-product-info h3 {
-    margin: 6px;
-    font-size: 14px; /* Slightly smaller font for smaller screens */
+  .amazon-add-to-cart-button {
+    padding: 8px 16px; /* Adjust button padding for smaller screens */
+    font-size: 14px;
   }
 
-  .trending-product-price {
-    margin: 6px;
-    font-size: 16px; /* Adjust font size for mobile */
+  .amazon-product-name {
+    font-size: 16px;
   }
 
-  .trending-product-description {
-    margin: 6px;
-    font-size: 12px; /* Smaller text for mobile */
+  .amazon-product-price {
+    font-size: 18px;
   }
 
-  .trending-add-to-cart-button {
-    padding: 10px 6px; /* Reduced padding for smaller screens */
-    font-size: 20px; /* Adjust font size */
-  }
-
-  .trending-wish-list-icon {
-    font-size: 18px; /* Adjust icon size */
+  .amazon-product-description {
+    font-size: 12px;
   }
 }
 
-@media (max-width: 480px) {
-  /* Adjust grid to 2 columns on mobile devices */
- 
-  .trending-products{
-    margin-left: 40px;
- 
-   }
-
-  .trending-products-container {
-    grid-template-columns: repeat(2, 1fr);
+@media screen and (max-width: 480px) {
+  .amazon-products-section h2 {
+    font-size: 24px; /* Adjust heading size for smaller screens */
   }
 
-  /* Adjust image height for smaller screens */
-  .trending-image-container img {
-    height: 150px; /* Reduced height for mobile */
+  .amazon-product-card {
+    width: 100%; /* Full width for mobile */
   }
 
-  .trending-product-info h3 {
-    font-size: 12px; /* Smaller font for mobile */
+  .amazon-add-to-cart-button {
+    font-size: 12px;
+    padding: 6px 12px;
   }
 
-  .trending-product-price {
-    font-size: 14px; /* Smaller font for mobile */
+  .amazon-product-name {
+    font-size: 14px;
   }
 
-  .trending-product-description {
-    font-size: 12px; /* Smaller font for mobile */
+  .amazon-product-price {
+    font-size: 16px;
   }
 
-  .trending-add-to-cart-button {
-    font-size: 12px; /* Smaller font for mobile */
-    padding: 5px 8px; /* Smaller padding for mobile */
-  }
-
-  .trending-wish-list-icon {
-    font-size: 16px; /* Smaller icon for mobile */
+  .amazon-product-description {
+    font-size: 12px;
   }
 }

@@ -45,10 +45,10 @@
         background-image: url('../../assets/images/home-11.jpg');
     }
     50% {
-        background-image: url('../../assets/images/home-9.jpg'); /* Another image */
+        background-image: url('../../assets/images/home3.jpg'); /* Another image */
     }
     100% {
-        background-image: url('../../assets/images/home-10.jpg'); /* Back to original */
+        background-image: url('../../assets/images/Home1.png'); /* Back to original */
     }
 }
 

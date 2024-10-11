@@ -5,6 +5,8 @@ import Header from '../header/header';
 import './payment.css';
 import axios from 'axios';
 import SimpleFooter from '../Footers/SimpleFooters';
+import CryptoJS from 'crypto-js';
+
 
 
 const PaymentPage = () => {
@@ -33,6 +35,65 @@ const PaymentPage = () => {
   const handlePaymentChange = (e) => {
     setSelectedPayment(e.target.value);
   };
+  
+  const generateXVerify = (payload) => {
+    const requestBody = JSON.stringify(payload);
+    const saltKey = "your-salt-key"; // Your PhonePe salt key
+    const hashString = requestBody + "/pg/v1/pay" + saltKey;
+  
+    // Generate SHA256 hash
+    const hash = CryptoJS.SHA256(hashString).toString(CryptoJS.enc.Hex);
+  
+    return hash;
+  };
+
+  const initiatePayment = async () => {
+    const payload = {
+      merchantId: "MERCHANTUAT",
+      merchantTransactionId: "MT7850590068188104",
+      merchantUserId: "MUID123",
+      amount: 10000,
+      redirectUrl: "https://webhook.site/redirect-url",
+      redirectMode: "REDIRECT",
+      callbackUrl: "https://webhook.site/callback-url",
+      mobileNumber: "9999999999",
+      paymentInstrument: {
+        type: "PAY_PAGE",
+      },
+    };
+  
+    const payloadString = JSON.stringify(payload);
+    const encodedPayload = btoa(payloadString);
+  
+    try {
+      const response = await fetch(
+        "https://api-preprod.phonepe.com/apis/pg-sandbox/pg/v1/pay",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "X-VERIFY": generateXVerify(encodedPayload), // Security header
+          },
+          body: encodedPayload,
+        }
+      );
+  
+      if (!response.ok) {
+        throw new Error("Payment initiation failed");
+      }
+  
+      const data = await response.json();
+      if (data.redirectUrl) {
+        // Redirect the user to PhonePe's payment page
+        window.location.href = data.redirectUrl;
+      }
+    } catch (error) {
+      console.error("Payment error", error);
+    }
+  };
+  
+
+
 
   const handlePaymentSubmit = async () => {
     setIsProcessing(true); // Set processing state to true
