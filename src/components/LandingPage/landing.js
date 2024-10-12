@@ -50,8 +50,8 @@ const HomePage = () => {
               <FontAwesomeIcon icon={faSearch} /> Search
             </button>
           </form>
-          <h3>TEEN FASHION</h3>
-          <p>The Fashion Glossary | A-Z Industry Words</p>
+          <h3 className="header"> TEEN FASHION</h3>
+          <p className="para">The Fashion Glossary | A-Z Industry Words</p>
           <a href="#" className="btn">
             <span className="text text-1">SHOP NOW</span>
             

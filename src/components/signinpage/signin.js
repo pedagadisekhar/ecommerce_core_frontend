@@ -108,7 +108,7 @@ function Signin() {
         </p>
 
         <p className="signup-link">
-          <Link to="/signup">Create an account.?</Link>
+          <Link to="/signuppage">Create an account.?</Link>
         </p>
       </div>
     </div>

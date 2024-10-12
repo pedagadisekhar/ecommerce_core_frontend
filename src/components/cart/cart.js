@@ -187,7 +187,8 @@ const CartPage = () => {
       ) : (
         <p>Your cart is empty.</p>
       )}
-
+       {cartData.length > 0 && (
+            <>
       <div className="payment-card">
         <h3>Order Summary</h3>
         <div className="summary-row">
@@ -214,6 +215,7 @@ const CartPage = () => {
           Apply Coupon
         </button>
         </div>
+       
 
         <div className="summary-row">
           <p className="label">Discount:</p>
@@ -229,7 +231,8 @@ const CartPage = () => {
       <button className="pay-now-button" onClick={handleProceedToPayment}>
         Proceed to Payment
       </button>
-
+      </>
+      )}
       {/* Modal for entering address */}
       <Modal
   isOpen={showAddressModal}

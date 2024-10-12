@@ -17,6 +17,7 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
+  margin-top: 20px;
 }
 
 /* Heading */
@@ -297,7 +298,8 @@ body {
 @media (max-width: 480px) {
   
   .cart-page {
-    margin-left: 40px;
+    margin-left: 0px;
+    margin-top: 20px;
   }
 
   .cart-page {

@@ -11,6 +11,7 @@
     box-sizing: border-box;
     display: flex;
     justify-content: center;
+    background-size: contain;
     align-items: center;
     margin-top: 50px; /* Reduced margin for smaller screens */
     transition: background 0.3s ease; /* Smooth background transitions */
@@ -27,11 +28,30 @@
 }
 
 .home-content h3 {
-    font-size: 28px; /* Adjusted font size for smaller screens */
-    font-weight: bold;
-    margin: 15px 0; /* Reduced margin for smaller screens */
-    text-transform: uppercase;
+    color: #ffffff; /* White text */
+    font-size: 32px; /* Larger font size for heading */
+    font-weight: bold; /* Make it bold */
+    margin: 10px 0; /* Space between the heading and paragraph */
+    text-transform: uppercase; /* Uppercase text */
+    letter-spacing: 1.5px; /* Slight spacing between letters */
 }
+.header {
+    color: #ffffff; /* White text inside the letters */
+    font-size: 40px; /* Larger font size */
+    font-weight: 700; /* Bold text */
+    margin: 15px 0; /* Increase margin for breathing room */
+    text-transform: uppercase; /* Uppercase text */
+    letter-spacing: 2px; /* Slightly more spacing */
+    -webkit-text-stroke: 1.5px #000000; /* Black border around letters */
+    text-stroke: 1.5px #000000; /* Stroke for non-webkit browsers */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Soft shadow for depth *   
+    /* Light white gradient background */
+    background: linear-gradient(90deg, #f0f0f0, #fafafa); /* Very light white/gray gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Clip the gradient inside the text */
+}
+
+
 
 .home-content p {
     font-size: 16px; /* Adjusted font size for smaller screens */
@@ -128,7 +148,7 @@
 /* Responsive styling */
 @media (max-width: 768px) {
     .home-section {
-        
+        background-size: cover;
         padding: 40px 10px; /* Further adjusted padding */
         height: 600px; /* Adjusted height for smaller screens */
         width: 100%;
@@ -139,7 +159,13 @@
     }
 
     .home-content h3 {
-        font-size: 24px; /* Further adjusted font size */
+        
+        color: #ffffff; /* White text */
+  font-size: 32px; /* Larger font size for heading */
+  font-weight: bold; /* Make it bold */
+  margin: 10px 0; /* Space between the heading and paragraph */
+  text-transform: uppercase; /* Uppercase text */
+  letter-spacing: 1.5px; /* Slight spacing between letters */
     }
 
     .home-content p {

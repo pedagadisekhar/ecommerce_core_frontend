@@ -31,7 +31,7 @@ const SimpleFooter = () => {
                   </a>
                 </li>
                 <li className="custom-social-icon__item">
-                  <a className="custom-social-icon__link" href="#">
+                  <a className="custom-social-icon__link" href="https://www.instagram.com/teens__fashions?igsh=amhpZDNrZmRibTZo">
                     <FaInstagram />
                   </a>
                 </li>
