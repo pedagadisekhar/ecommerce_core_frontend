@@ -3,6 +3,7 @@ import './trending.css';
 import { FaHeart } from 'react-icons/fa';
 import BASE_URL from '../../config';
 import { Link, useLocation } from 'react-router-dom';
+import axios from 'axios';
 
 const TrendingProducts = () => {
   // State for trending products and wish list
@@ -34,6 +35,84 @@ const TrendingProducts = () => {
     };
     fetchTrendingProducts();
   }, []);
+  
+  const handleAddToCart = async (productId, quantity,inventory) => {
+    const token = localStorage.getItem('token');
+    const userId = localStorage.getItem('UserId');
+    if(quantity<inventory){
+
+    if (!token || !userId) {
+      console.error('User is not authenticated');
+      return;
+    }
+
+    try {
+      const response = await axios.post(
+        `${BASE_URL}/api/addtocart`,
+        {
+          productId,
+          userId,
+          quantity,
+          size: 'xl',
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          }
+        }
+      );
+
+      if (response.status === 200) {
+        console.log(`Product ${productId} added to cart`);
+        alert("your product added succesfully to the cart")
+
+      } else {
+        console.error('Failed to add product to cart');
+      }
+    } catch (err) {
+      console.error('Error adding product to cart:', err.message);
+    }
+  }else{
+    alert("Quantatity Not Avaliable")
+  }
+  };
+  
+  const handleAddToWishlist = async (productId) => {
+    const token = localStorage.getItem('token');
+    const userId = localStorage.getItem('UserId');
+
+    if (!token || !userId) {
+      console.error('User is not authenticated');
+      alert('Please Sign In')
+      return;
+    }
+
+    try {
+      const response = await axios.post(
+        `${BASE_URL}/api/addtowishlist`,
+        {
+          productId,
+          userId,
+          quantity:'1',
+          size: 'm'
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          }
+        }
+      );
+
+      if (response.status === 200) {
+        console.log(`Product ${productId} added to wishlist`);
+        alert('your product added succesfully to the cart')
+      } else {
+        console.error('Failed to add product to wishlist');
+      }
+    } catch (err) {
+      console.error('Error adding product to wishlist:', err.message);
+    }
+  };
 
   // Add or remove product from wish list
   const toggleWishList = (productId) => {
@@ -71,10 +150,12 @@ const TrendingProducts = () => {
             <p className="amazon-product-description">{product.description}</p>
           </div>
           <div className="amazon-action-buttons">
+          <Link to={`/product/${product.ProductId}`}>
             <button className="amazon-add-to-cart-button">Add to Cart</button>
+            </Link>
             <button
               className="amazon-wish-list-button"
-              onClick={() => toggleWishList(product.id)}
+             onClick={() => handleAddToWishlist(product.id)}
             >
               {wishList.includes(product.id) ? (
                 <FaHeart className="amazon-wish-list-icon liked" />

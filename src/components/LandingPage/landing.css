@@ -14,7 +14,7 @@
     background-size: contain;
     align-items: center;
     margin-top: 50px; /* Reduced margin for smaller screens */
-    transition: background 0.3s ease; /* Smooth background transitions */
+    animation: imageSlideshow 10s infinite;  /* Smooth background transitions */
 }
 
 /* Content within the home section */
@@ -60,21 +60,28 @@
 }
 
 /* Background transition effects (for switching images) */
-@keyframes backgroundSwitch {
+@keyframes imageSlideshow {
     0% {
-        background-image: url('../../assets/images/home-11.jpg');
+        background-image: url('../../assets/images/Home1.png');
+      
     }
-    50% {
-        background-image: url('../../assets/images/home3.jpg'); /* Another image */
+    33% {
+        background-image: url('../../assets/images/home3.jpg');
+      
+    }
+    66% {
+        background-image: url('../../assets/images/home-11.jpg');
+       
     }
     100% {
-        background-image: url('../../assets/images/Home1.png'); /* Back to original */
+        background-image: url('../../assets/images/Home1.png'); /* Loop back to the first image */
+       
     }
 }
 
 /* Add animation to smoothly transition between background images */
 .home-section {
-    animation: backgroundSwitch 15s infinite; /* Change duration for smoother/slower transitions */
+    animation: imageSlideshow 5s infinite step-start;  /* Change duration for smoother/slower transitions */
 }
 
 /* Search bar styling */
