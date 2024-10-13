@@ -4,10 +4,10 @@ import './signup.css';  // Import the new CSS file
 import Header from '../header/header';
 import SimpleFooter from '../Footers/SimpleFooters';
 import BASE_URL from '../../config';
+import backgroundImage from '../../assets/images/logo-1.jpg';
 
 const OtpSignup = () => {
     const [signupData, setSignupData] = useState({
-        UserName: '',
         email: '',
         mobileNo: '',
         Password: ''
@@ -59,7 +59,15 @@ const OtpSignup = () => {
         <>
         <Header/>
         <div className="container">
-            <div className="form-container">
+            <div className="form-container"
+             style={{ 
+                backgroundImage: `url(${backgroundImage})`, // Use the imported image
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
+                height: '100vh' // Ensures it covers the full height
+              }}
+            >
                 {errorMessage && <p className="error">{errorMessage}</p>}
 
                 {step === 1 ? (

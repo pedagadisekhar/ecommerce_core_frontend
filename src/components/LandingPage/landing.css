@@ -63,6 +63,7 @@
 @keyframes imageSlideshow {
     0% {
         background-image: url('../../assets/images/Home1.png');
+        background-position: -40% center; 
       
     }
     33% {
@@ -75,7 +76,7 @@
     }
     100% {
         background-image: url('../../assets/images/Home1.png'); /* Loop back to the first image */
-       
+        background-position: -90% center; 
     }
 }
 

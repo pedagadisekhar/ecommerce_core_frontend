@@ -6,7 +6,7 @@ import "./signin.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import BASE_URL from '../../config';
-import backgroundImage from '../../assets/images/home-4.jpg';
+import backgroundImage from '../../assets/images/logo-1.jpg';
 import { ToastContainer, toast } from 'react-toastify';
 import SimpleFooter from '../Footers/SimpleFooters';
 import Header from '../header/header';

@@ -3,14 +3,16 @@ import { Link, useLocation  } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faShoppingBag, faHeart } from '@fortawesome/free-solid-svg-icons';
+import BASE_URL from '../../config';
+import axios from "axios";
 import './header.css';
 import logo from '../../assets/images/logo-1.jpg';
 
 function Header() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const [cartCount, setCartCount] = useState(3);
-  const [wishlistCount, setWishlistCount] = useState(5);
+  const [cartCount, setCartCount] = useState(0);
+  const [wishlistCount, setWishlistCount] = useState(0);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768); // Mobile check
   const location = useLocation();
   const navigate = useNavigate();
@@ -37,6 +39,50 @@ function Header() {
     return () => {
       window.removeEventListener('resize', handleResize);
     };
+  }, []);
+  
+  useEffect(() => {
+    const fetchOrders = async () => {
+      const userId = localStorage.getItem('UserId'); // Retrieve userId from local storage
+     
+      try {
+        const response = await axios.post(`${BASE_URL}/api/getCartDatacountById`, 
+          { userId: userId } // Include userId in the request body
+         
+        );
+        setCartCount(response.data["count(*)"]);
+         console.log("cnt"+response.data["count(*)"]);
+
+      } catch (err) {
+       // setError('Failed to fetch orders');
+      } finally {
+        //setLoading(false);
+      }
+    };
+
+    fetchOrders();
+  }, []);
+  
+  useEffect(() => {
+    const fetchOrders = async () => {
+      const userId = localStorage.getItem('UserId'); // Retrieve userId from local storage
+     
+      try {
+        const response = await axios.post(`${BASE_URL}/api/getwishlistDatacountById`, 
+          { userId: userId } // Include userId in the request body
+         
+        );
+        setWishlistCount(response.data["count(*)"]);
+         console.log("cnt"+response.data["count(*)"]);
+
+      } catch (err) {
+       // setError('Failed to fetch orders');
+      } finally {
+        //setLoading(false);
+      }
+    };
+
+    fetchOrders();
   }, []);
 
   useEffect(() => {
@@ -111,7 +157,7 @@ function Header() {
 
         <div className="custom-icon wishlist-icon">
           <FontAwesomeIcon icon={faHeart} />
-          <span className="wishlist-count">{wishlistCount}</span>
+          {wishlistCount > 0 && <span className="wishlist-count">{wishlistCount}</span>}
         </div>
         </Link>
 
