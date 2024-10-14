@@ -10,7 +10,6 @@ import backgroundImage from '../../assets/images/logo-1.jpg';
 import { ToastContainer, toast } from 'react-toastify';
 import SimpleFooter from '../Footers/SimpleFooters';
 import Header from '../header/header';
-
 import 'react-toastify/dist/ReactToastify.css';
 
 
