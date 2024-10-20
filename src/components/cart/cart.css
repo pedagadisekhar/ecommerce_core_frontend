@@ -171,86 +171,106 @@ body {
 .pay-now-button:hover {
   background-color: #73d13d;
 }
-.modal-backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
-  z-index: 100;
-}
-
+/* Modal Styling */
 .modal {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 90%;
-  height: 74%;
-  max-width: 500px; /* Limiting the width on larger screens */
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
+  max-width: 400px; /* Limit the width on larger screens */
+  border-radius: 15px; /* Soft rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+  padding: 20px; /* Padding inside modal */
+  z-index: 1000;
   margin-top: 300px;
   margin-left: 650px;
-  box-shadow: 0px 4px 8px #fff;
-  z-index: 101;
-  box-sizing: border-box;
+  animation: slideIn 0.5s ease; /* Smooth slide-in effect */
+  text-align: center; /* Center the content */
+  font-family: 'Roboto', sans-serif; /* Modern font */
 }
 
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85); /* Darker transparent backdrop */
+  z-index: 999;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Close button */
 .modal-close {
   position: absolute;
   top: 10px;
-  right: 10px;
-  background-color: transparent;
+  right: 15px;
+  background: none;
   border: none;
+  color: #fff;
   font-size: 20px;
   cursor: pointer;
-  color: #fff;
+  transition: color 0.3s ease;
 }
 
-/* Address Form Styling */
+.modal-close:hover {
+  color: #f9f9f9; /* Bright color on hover */
+}
+
+/* Form inputs */
 .address-form {
   display: flex;
-  flex-direction: column;
-  gap: 12px;
+  flex-direction: column; /* Stack inputs vertically */
+  align-items: center;
+  gap: 15px; /* Space between form elements */
+}
+
+.address-form h3{
+  color: #f9f9f9; 
 }
 
 .address-input {
-  width: 100%;
-  padding: 12px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
+  width: 100%; /* Full width on mobile */
+  padding: 12px; /* Comfortable padding */
+  border-radius: 8px; /* Rounded corners for inputs */
+  border: 1px solid #ddd;
+  background-color: #fafafa; /* Light background */
+  font-size: 14px; /* Adjusted font size */
+  transition: border-color 0.3s ease;
 }
 
 .address-input:focus {
-  border-color: #007bff; /* Optional: Highlight border on focus */
+  border-color: #febd69; /* Amazon-style color on focus */
   outline: none;
 }
 
-h3 {
-  font-size: 20px;
-  text-align: center;
-  margin-bottom: 15px;
-}
-
+/* Submit button */
 .submit-address-button {
-  width: 100%;
-  padding: 12px;
-  background-color: #ffc107;
-  color: #000;
-  font-size: 16px;
-  font-weight: bold;
+  background-color: #febd69; /* Warm accent color */
+  color: #111;
+  padding: 12px 25px; /* Comfortable padding */
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
+  font-size: 16px; /* Adjusted font size */
+  font-weight: bold;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .submit-address-button:hover {
-  background-color: #ffca28;
+  background-color: #f3a847;
+  transform: scale(1.05); /* Slight scaling effect on hover */
 }
 
 /* Footer Spacing (Remove excessive <br/>) */
@@ -260,44 +280,82 @@ h3 {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-
-
-  .cart-item {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-   
-  .modal {
-    width: 90%;
-    height: 40%;
-    margin-left: 206px;
+  
+  .address-form h3{
+    margin-top: -10px;
+    color: #f9f9f9; 
   }
   
-  .modal-backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 80%;
-    height: 80%;
-    margin-left: 30px;
-    margin-top: 140px;
-    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
-    z-index: 100;
+  .cart-item {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+  }
+
+  /* Remove Button - Smaller and aligned to the top right */
+  .remove-item {
+    align-self: flex-end; /* Align button to the right */
+    margin-bottom: 30px;
+    font-size: 14px;
+    padding: 5px 10px;
+  }
+
+  /* Product Image - Full width on mobile */
+  .product-image {
+    width: 80px; /* Full width on smaller screens */
+    height: 80px; /* Full width on smaller screens */
+    margin-bottom: 10px;
+    border-radius: 10px; /* Slightly more rounded corners */
+  }
+  
+
+
+  /* Product Details - Make sure text scales properly */
+  .product-details h3 {
+    font-size: 1rem; /* Slightly smaller font for mobile */
+    margin-bottom: 5px;
+    color: #333;
+  }
+
+  .product-details p {
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  
+ 
+   
+  .modal {
+    width: 95%; /* Wider modal for smaller screens */
+    padding: 15px;
+  }
+  
+  .address-form {
+   margin-top: -50px;
+
+  }
+
+  .address-input {
+    margin-top: 3px;
+    font-size: 13px; /* Adjusted font size for smaller screens */
+  }
+
+  .submit-address-button {
+    font-size: 14px;
+    padding: 10px 20px; /* Adjust padding on smaller screens */
   }
   .modal-close {
     margin-right: 45px;
-    margin-top: 95px;
+    margin-top: 9px;
   }
   .remove-item {
     align-self: flex-end;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
   }
 
-  .product-image {
-    width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-  }
+ 
 
   .payment-card {
     padding: 15px;
